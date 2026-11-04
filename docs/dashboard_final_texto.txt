@@ -1,0 +1,35 @@
+Browser tab: 2, Title: "CardioIA · Monitoramento", URL: "http://127.0.0.1:1880/dashboard/monitoramento".
+1 AXWebArea CardioIA · Monitoramento, URL: 127.0.0.1:1880/dashboard/monitoramento
+	2 container
+		3 container
+			4 button
+			5 text CardioIA · Monitoramento
+		43 content list
+			44 link Description: CardioIA · Monitoramento, Value: 127.0.0.1:1880/dashboard/monitoramento
+		6 container nrdb-page-d2abebc72493d940
+			7 container
+				8 container
+					9 text CARDIOIA CONECTADA · SIMULAÇÃO ACADÊMICA
+					10 heading Monitoramento de sinais, Value: 2
+						11 text Monitoramento de sinais
+					45 text Dados recebidos — limites didáticos não ultrapassados Dispositivo cardioia-demo-01 Sequência #77 Fila após confirmação 0 / 2.000 Amostras recebidas 61 Temperatura ambiente 37 °C Pulsos manuais / 60 s 0 bpm Sem mudança de aceleração 24 s Perdas por fila cheia 0 Recebimento: 00:48:08 · Fluxo recente DHT22 mede o ambiente. Pulsos são acionados manualmente. Alertas são regras de demonstração, sem interpretação clínica.
+			13 container
+				14 text Histórico dos sinais
+			15 container
+				16 text Últimas leituras
+				17 container nrdb-ui-widget-8e6932a3a59e9fb5
+					18 text Temperatura ambiente
+					19 image
+						20 text 0
+						21 text 50
+					22 container
+						46 text 37 °C
+				24 container nrdb-ui-widget-57dd9dc5b2fe9564
+					25 text Umidade relativa
+					26 image
+						27 text 0
+						28 text 100
+					29 container
+						47 text 55 %
+
+The focused UI element is 1 AXWebArea CardioIA · Monitoramento, URL: 127.0.0.1:1880/dashboard/monitoramento

@@ -1,0 +1,18 @@
+const {test}=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const source=fs.readFileSync(path.join(__dirname,'../node-red/processar_telemetria.js'),'utf8');
+const run=new Function('msg','context','node',source);
+function harness(){const data={};const warnings=[];return {run:p=>run({payload:p},{get:k=>data[k],set:(k,v)=>{data[k]=v}},{warn:w=>warnings.push(w)}),data,warnings};}
+function packet(extra={}){return {schema:1,simulated:true,device_id:'cardioia-teste-01',boot_id:'0123456789abcdef',seq:1,uptime_ms:65000,age_ms:0,temperature_c:36.5,humidity_pct:55,accel_x:0,accel_y:0,accel_z:9.806, idle_ms:1000,bpm:72,pulse_window_ready:true,queue_pending:1,dropped_total:0,...extra};}
+test('telemetria valida produz grafico, medidores, resumo e ACK correspondente',()=>{const h=harness();const out=h.run(packet());assert.equal(out[0].payload.value,36.5);assert.equal(out[1].payload.value,72);assert.equal(out[2].payload,36.5);assert.equal(out[4].payload.warnings.length,0);assert.deepEqual(JSON.parse(out[5].payload),{device_id:'cardioia-teste-01',boot_id:'0123456789abcdef',seq:1});});
+test('limites sao estritos: 38 graus e 120 bpm nao disparam; acima disparam',()=>{assert.equal(harness().run(packet({temperature_c:38,bpm:120}))[4].payload.warnings.length,0);assert.equal(harness().run(packet({temperature_c:38.1,bpm:121}))[4].payload.warnings.length,2);});
+test('inatividade, falha e perdas nao sao apresentadas como normais',()=>{const out=harness().run(packet({temperature_c:null,humidity_pct:null,idle_ms:60000,dropped_total:2}));assert.equal(out[0],null);assert.equal(out[2],null);assert.equal(out[4].payload.warnings.length,3);});
+test('janela incompleta nao transforma falta de dados em BPM zero',()=>{const out=harness().run(packet({bpm:null,pulse_window_ready:false}));assert.equal(out[1],null);assert.equal(out[4].payload.bpm,null);assert.ok(out[5]);});
+test('reenvio apos ACK perdido confirma novamente sem duplicar graficos',()=>{const h=harness();h.run(packet());const out=h.run(packet());assert.deepEqual(out.slice(0,5),[null,null,null,null,null]);assert.ok(out[5]);assert.equal(h.data.state.accepted,1);assert.equal(h.data.state.duplicates,1);});
+test('reinicio com boot novo aceita sequencia reiniciada',()=>{const h=harness();h.run(packet({seq:500}));assert.ok(h.run(packet({boot_id:'fedcba9876543210'}))[4]);assert.equal(h.data.state.accepted,2);});
+test('pacote atrasado e identificado como historico e conserva horario relativo',()=>{const before=Date.now();const out=harness().run(packet({age_ms:30000,queue_pending:7}));assert.equal(out[4].payload.historical,true);assert.equal(out[4].payload.pending_after_ack,6);assert.ok(Math.abs(out[0].payload.time-(before-30000))<100);});
+test('dados invalidos e JSON malformado nao geram ACK',()=>{for(const p of ['{',null,packet({seq:-1}),packet({temperature_c:'39'}),packet({humidity_pct:101}),packet({boot_id:'x'}),packet({simulated:false}),packet({bpm:301}),packet({queue_pending:0}),packet({pulse_window_ready:false,bpm:0})]){const h=harness();assert.equal(h.run(p),null);assert.ok(h.warnings.length);}});
+test('memoria de deduplicacao fica limitada a 64 sessoes',()=>{const h=harness();for(let i=0;i<70;i++)h.run(packet({boot_id:i.toString(16).padStart(16,'0')}));assert.equal(Object.keys(h.data.state.sessions).length,64);});
+test('export usa o mesmo codigo testado e todas as conexoes apontam a nos existentes',()=>{const flow=JSON.parse(fs.readFileSync(path.join(__dirname,'../node-red/flows.json'),'utf8'));const ids=new Set(flow.map(n=>n.id));assert.equal(flow.find(n=>n.type==='function').func,source);for(const n of flow)for(const wire of n.wires||[])for(const id of wire)assert.ok(ids.has(id));});

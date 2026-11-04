@@ -1,0 +1,27 @@
+CARDIOIA CONECTADA - ATIVIDADE PRINCIPAL
+FIAP - Cap 1 - IoT e Visualizacao de Dados para a Saude Digital
+
+LINK DA SIMULACAO
+https://wokwi.com/projects/479728974687586305
+
+PARTE 1
+- Codigo C++ comentado: esp32/sketch.ino
+- Circuito e bibliotecas: esp32/diagram.json e esp32/libraries.txt
+- Relatorio: output/pdf/Relatorio_Parte_1_Edge.pdf (2 paginas)
+
+PARTE 2
+- O mesmo codigo ESP32 implementa MQTT.
+- Export do dashboard: node-red/flows.json
+- Relatorio: output/pdf/Relatorio_Parte_2_MQTT_Dashboard.pdf (2 paginas)
+- Evidencias da simulacao e do dashboard: pasta docs/
+
+PARA ABRIR NA SUA MAQUINA
+Extraia o ZIP inteiro. Abra iniciar_dashboard.bat e mantenha a janela aberta.
+Dashboard: http://127.0.0.1:1880/dashboard/monitoramento
+Depois abra o link Wokwi acima e clique em iniciar a simulacao.
+Use a chave do circuito para demonstrar coleta offline e sincronizacao.
+O README traz as instrucoes completas e os limites do prototipo.
+
+Somente dados simulados. Este pacote contem a atividade principal, sem os Ir Alem.
+Nao e necessario video para os entregaveis da atividade principal do enunciado recebido.
+O envio na plataforma da FIAP ainda deve ser realizado.

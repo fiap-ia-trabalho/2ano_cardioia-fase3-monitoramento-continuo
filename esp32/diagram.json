@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "author": "Equipe CardioIA - FIAP",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 30,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -80,
+      "left": 220,
+      "attrs": {
+        "temperature": "36.5",
+        "humidity": "55"
+      }
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "mpu",
+      "top": 80,
+      "left": 260,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "pulse",
+      "top": 250,
+      "left": 210,
+      "attrs": {
+        "color": "blue",
+        "label": "Pulso manual (P)",
+        "key": "P",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "online",
+      "top": -90,
+      "left": -140,
+      "attrs": {
+        "value": "1",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "alert",
+      "top": 120,
+      "left": -130,
+      "attrs": {
+        "color": "red",
+        "label": "Alerta didático"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 180,
+      "left": -120,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label",
+      "top": -150,
+      "left": -170,
+      "attrs": {
+        "text": "CARDIOIA CONECTADA\nChave: esquerda OFFLINE / direita ONLINE\nDHT22 + MPU6050 | dados simulados"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "dht:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "dht:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "dht:SDA",
+      "esp:D15",
+      "green",
+      []
+    ],
+    [
+      "mpu:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "mpu:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "mpu:SDA",
+      "esp:D21",
+      "green",
+      []
+    ],
+    [
+      "mpu:SCL",
+      "esp:D22",
+      "blue",
+      []
+    ],
+    [
+      "pulse:1.r",
+      "esp:D27",
+      "blue",
+      []
+    ],
+    [
+      "pulse:2.r",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "online:2",
+      "esp:D25",
+      "orange",
+      []
+    ],
+    [
+      "online:1",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "online:3",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "alert:A",
+      "esp:D19",
+      "red",
+      []
+    ],
+    [
+      "alert:C",
+      "r1:1",
+      "black",
+      []
+    ],
+    [
+      "r1:2",
+      "esp:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

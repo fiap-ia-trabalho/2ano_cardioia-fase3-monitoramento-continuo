@@ -1,0 +1,4 @@
+DHT sensor library for ESPx@1.19
+Adafruit MPU6050@2.2.6
+PubSubClient@2.8.0
+ArduinoJson@7.4.2

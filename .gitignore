@@ -1,0 +1,10 @@
+.local/
+.pio/
+node-red/node_modules/
+node-red/.config*
+node-red/*_cred.json
+node-red/context/
+node-red/.sessions.json
+tmp/
+__pycache__/
+*.log
