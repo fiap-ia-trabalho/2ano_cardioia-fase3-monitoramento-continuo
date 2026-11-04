@@ -1,0 +1,136 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:1156
+load:0x40078000,len:11456
+ho 0 tail 12 room 4
+load:0x40080400,len:2972
+entry 0x400805dc
+CardioIA | sessao=bea9998f0127a984 | capacidade=2000 | RAM amostras=72000 bytes
+Chave esquerda=offline; direita=online. Serial: s=Parte1; m=MQTT Parte2.
+[COLETA] seq=1 t=36.5 umidade=55.0 fila=1/2000 online=1
+[MQTT] conectado. Aguardando confirmacoes do dashboard.
+[ENVIO MQTT] seq=1 aguardando ACK; fila=1
+[SINCRONIZADO MQTT] seq=1 confirmada pelo Node-RED; fila=0
+[COLETA] seq=2 t=36.5 umidade=55.0 fila=1/2000 online=1
+[ENVIO MQTT] seq=2 aguardando ACK; fila=1
+[SINCRONIZADO MQTT] seq=2 confirmada pelo Node-RED; fila=0
+[COLETA] seq=3 t=36.5 umidade=55.0 fila=1/2000 online=1
+[ENVIO MQTT] seq=3 aguardando ACK; fila=1
+[SINCRONIZADO MQTT] seq=3 confirmada pelo Node-RED; fila=0
+[COLETA] seq=4 t=36.5 umidade=55.0 fila=1/2000 online=0
+[COLETA] seq=5 t=36.5 umidade=55.0 fila=2/2000 online=0
+[COLETA] seq=6 t=36.5 umidade=55.0 fila=3/2000 online=0
+[COLETA] seq=7 t=36.5 umidade=55.0 fila=4/2000 online=0
+[COLETA] seq=8 t=36.5 umidade=55.0 fila=5/2000 online=0
+[COLETA] seq=9 t=36.5 umidade=55.0 fila=6/2000 online=0
+[COLETA] seq=10 t=36.5 umidade=55.0 fila=7/2000 online=0
+[COLETA] seq=11 t=36.5 umidade=55.0 fila=8/2000 online=0
+[COLETA] seq=12 t=36.5 umidade=55.0 fila=9/2000 online=0
+[COLETA] seq=13 t=36.5 umidade=55.0 fila=10/2000 online=0
+[COLETA] seq=14 t=36.5 umidade=55.0 fila=11/2000 online=0
+[COLETA] seq=15 t=36.5 umidade=55.0 fila=12/2000 online=0
+[COLETA] seq=16 t=36.5 umidade=55.0 fila=13/2000 online=0
+[COLETA] seq=17 t=36.5 umidade=55.0 fila=14/2000 online=0
+[COLETA] seq=18 t=36.5 umidade=55.0 fila=15/2000 online=0
+[COLETA] seq=19 t=36.5 umidade=55.0 fila=16/2000 online=0
+[COLETA] seq=20 t=36.5 umidade=55.0 fila=17/2000 online=0
+[MQTT] conectado. Aguardando confirmacoes do dashboard.
+[ENVIO MQTT] seq=4 aguardando ACK; fila=17
+[COLETA] seq=21 t=36.5 umidade=55.0 fila=18/2000 online=1
+[SINCRONIZADO MQTT] seq=4 confirmada pelo Node-RED; fila=17
+[ENVIO MQTT] seq=5 aguardando ACK; fila=17
+[SINCRONIZADO MQTT] seq=5 confirmada pelo Node-RED; fila=16
+[ENVIO MQTT] seq=6 aguardando ACK; fila=16
+[SINCRONIZADO MQTT] seq=6 confirmada pelo Node-RED; fila=15
+[ENVIO MQTT] seq=7 aguardando ACK; fila=15
+[SINCRONIZADO MQTT] seq=7 confirmada pelo Node-RED; fila=14
+[ENVIO MQTT] seq=8 aguardando ACK; fila=14
+[SINCRONIZADO MQTT] seq=8 confirmada pelo Node-RED; fila=13
+[ENVIO MQTT] seq=9 aguardando ACK; fila=13
+[SINCRONIZADO MQTT] seq=9 confirmada pelo Node-RED; fila=12
+[ENVIO MQTT] seq=10 aguardando ACK; fila=12
+[COLETA] seq=22 t=36.5 umidade=55.0 fila=13/2000 online=1
+[SINCRONIZADO MQTT] seq=10 confirmada pelo Node-RED; fila=12
+[ENVIO MQTT] seq=11 aguardando ACK; fila=12
+[SINCRONIZADO MQTT] seq=11 confirmada pelo Node-RED; fila=11
+[ENVIO MQTT] seq=12 aguardando ACK; fila=11
+[SINCRONIZADO MQTT] seq=12 confirmada pelo Node-RED; fila=10
+[ENVIO MQTT] seq=13 aguardando ACK; fila=10
+[SINCRONIZADO MQTT] seq=13 confirmada pelo Node-RED; fila=9
+[ENVIO MQTT] seq=14 aguardando ACK; fila=9
+[SINCRONIZADO MQTT] seq=14 confirmada pelo Node-RED; fila=8
+[ENVIO MQTT] seq=15 aguardando ACK; fila=8
+[SINCRONIZADO MQTT] seq=15 confirmada pelo Node-RED; fila=7
+[ENVIO MQTT] seq=16 aguardando ACK; fila=7
+[COLETA] seq=23 t=36.5 umidade=55.0 fila=8/2000 online=1
+[SINCRONIZADO MQTT] seq=16 confirmada pelo Node-RED; fila=7
+[ENVIO MQTT] seq=17 aguardando ACK; fila=7
+[SINCRONIZADO MQTT] seq=17 confirmada pelo Node-RED; fila=6
+[ENVIO MQTT] seq=18 aguardando ACK; fila=6
+[SINCRONIZADO MQTT] seq=18 confirmada pelo Node-RED; fila=5
+[ENVIO MQTT] seq=19 aguardando ACK; fila=5
+[SINCRONIZADO MQTT] seq=19 confirmada pelo Node-RED; fila=4
+[ENVIO MQTT] seq=20 aguardando ACK; fila=4
+[SINCRONIZADO MQTT] seq=20 confirmada pelo Node-RED; fila=3
+[ENVIO MQTT] seq=21 aguardando ACK; fila=3
+[COLETA] seq=24 t=36.5 umidade=55.0 fila=4/2000 online=1
+[SINCRONIZADO MQTT] seq=21 confirmada pelo Node-RED; fila=3
+[ENVIO MQTT] seq=22 aguardando ACK; fila=3
+[SINCRONIZADO MQTT] seq=22 confirmada pelo Node-RED; fila=2
+[ENVIO MQTT] seq=23 aguardando ACK; fila=2
+[SINCRONIZADO MQTT] seq=23 confirmada pelo Node-RED; fila=1
+[ENVIO MQTT] seq=24 aguardando ACK; fila=1
+[SINCRONIZADO MQTT] seq=24 confirmada pelo Node-RED; fila=0
+[COLETA] seq=25 t=36.5 umidade=55.0 fila=1/2000 online=1
+[ENVIO MQTT] seq=25 aguardando ACK; fila=1
+[SINCRONIZADO MQTT] seq=25 confirmada pelo Node-RED; fila=0
+[COLETA] seq=26 t=36.5 umidade=55.0 fila=1/2000 online=1
+[ENVIO MQTT] seq=26 aguardando ACK; fila=1
+[SINCRONIZADO MQTT] seq=26 confirmada pelo Node-RED; fila=0
+[COLETA] seq=27 t=36.5 umidade=55.0 fila=1/2000 online=1
+[ENVIO MQTT] seq=27 aguardando ACK; fila=1
+[SINCRONIZADO MQTT] seq=27 confirmada pelo Node-RED; fila=0
+[COLETA] seq=28 t=36.5 umidade=55.0 fila=1/2000 online=1
+[ENVIO MQTT] seq=28 aguardando ACK; fila=1
+[SINCRONIZADO MQTT] seq=28 confirmada pelo Node-RED; fila=0
+[COLETA] seq=29 t=36.5 umidade=55.0 fila=1/2000 online=1
+[ENVIO MQTT] seq=29 aguardando ACK; fila=1
+[SINCRONIZADO MQTT] seq=29 confirmada pelo Node-RED; fila=0
+[COLETA] seq=30 t=36.5 umidade=55.0 fila=1/2000 online=1
+[ENVIO MQTT] seq=30 aguardando ACK; fila=1
+[ENVIO MQTT] seq=30 aguardando ACK; fila=1
+[COLETA] seq=31 t=36.5 umidade=55.0 fila=2/2000 online=1
+[ENVIO MQTT] seq=30 aguardando ACK; fila=2
+[ENVIO MQTT] seq=30 aguardando ACK; fila=2
+[COLETA] seq=32 t=36.5 umidade=55.0 fila=3/2000 online=1
+[ENVIO MQTT] seq=30 aguardando ACK; fila=3
+[COLETA] seq=33 t=36.5 umidade=55.0 fila=4/2000 online=1
+[ENVIO MQTT] seq=30 aguardando ACK; fila=4
+[ENVIO MQTT] seq=30 aguardando ACK; fila=4
+[COLETA] seq=34 t=36.5 umidade=55.0 fila=5/2000 online=1
+[ENVIO MQTT] seq=30 aguardando ACK; fila=5
+[ENVIO MQTT] seq=30 aguardando ACK; fila=5
+[COLETA] seq=35 t=36.5 umidade=55.0 fila=6/2000 online=1
+[ENVIO MQTT] seq=30 aguardando ACK; fila=6
+[COLETA] seq=36 t=36.5 umidade=55.0 fila=7/2000 online=1
+[ENVIO MQTT] seq=30 aguardando ACK; fila=7
+[ENVIO MQTT] seq=30 aguardando ACK; fila=7
+[COLETA] seq=37 t=36.5 umidade=55.0 fila=8/2000 online=1
+[ENVIO MQTT] seq=30 aguardando ACK; fila=8
+[ENVIO MQTT] seq=30 aguardando ACK; fila=8
+[COLETA] seq=38 t=36.5 umidade=55.0 fila=9/2000 online=1
+[ENVIO MQTT] seq=30 aguardando ACK; fila=9
+[COLETA] seq=39 t=36.5 umidade=55.0 fila=10/2000 online=1
+[ENVIO MQTT] seq=30 aguardando ACK; fila=10
+[ENVIO MQTT] seq=30 aguardando ACK; fila=10
+[COLETA] seq=40 t=36.5 umidade=55.0 fila=11/2000 online=1
+[ENVIO MQTT] seq=30 aguardando ACK; fila=11
+[ENVIO MQTT] seq=30 aguardando ACK; fila=11
+[COLETA] seq=41 t=36.5 umidade=55.0 fila=12/2000 online=1
+[ENVIO MQTT] seq=30 aguardando ACK; fila=12
+[COLETA] seq=42 t=36.5 umidade=55.0 fila=13/2000 online=1
+[ENVIO MQTT] seq=30 aguardando ACK; fila=13

@@ -1,0 +1,7 @@
+{
+  "compiler": "zig.exe",
+  "groups_passed": 7,
+  "capacity_exercised": 2000,
+  "source": "esp32/core.hpp compartilhado com firmware",
+  "output": "PASS fila: capacidade 2000, drop-new, item em voo, wrap e FIFO\nPASS ACK: sessao, dispositivo, sequencia e item em voo\nPASS pulsos: aquecimento, debounce, contagem e expiracao\nPASS tempo: rollover uint32 sem reiniciar aquecimento\nPASS limite de 300 timestamps na janela de pulsos\nPASS sensores: faixas, NaN, gravidade e mudanca vetorial\nPASS alertas: limites, recuperacao, inatividade e falha local\nRESULTADO: 7 grupos C++ aprovados\n"
+}

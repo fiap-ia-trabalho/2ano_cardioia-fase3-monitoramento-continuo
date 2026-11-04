@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-04T03:45:53.337Z",
+  "checked_at": "2026-11-04T04:06:36.498Z",
   "vue_template_compiled": true,
   "widget_count": 5,
   "origin": "protocolo Socket.IO local, sem revisao visual no navegador",
@@ -11,7 +11,7 @@
           "schema": 1,
           "simulated": true,
           "device_id": "cardioia-teste-01",
-          "boot_id": "f1544d060c266799",
+          "boot_id": "365fc6449ea0f4d4",
           "seq": 6,
           "uptime_ms": 95000,
           "age_ms": 0,
@@ -25,15 +25,15 @@
           "pulse_window_ready": true,
           "queue_pending": 1,
           "dropped_total": 0,
-          "received_at": 1793763952447,
-          "sample_at": 1793763952447,
+          "received_at": 1793765195669,
+          "sample_at": 1793765195669,
           "historical": false,
           "warnings": [],
           "accepted": 38,
-          "duplicates": 1,
+          "duplicates": 2,
           "pending_after_ack": 0
         },
-        "_msgid": "a3615b3beb1c9a80"
+        "_msgid": "dd6cb5e74bd7ede1"
       }
     },
     "Temperatura ambiente (°C)": {
@@ -42,494 +42,481 @@
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763760381,
+            "time": 1793765086835,
             "value": 36.5
           },
-          "_msgid": "6d9dee9c1d3d66f2",
+          "_msgid": "71f648d4f00369ac",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763760381,
+            "x": 1793765086835,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763765554,
+            "time": 1793765092161,
             "value": 36.5
           },
-          "_msgid": "7ebe98619d509ec7",
+          "_msgid": "c22cfecd67fb0e6d",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763765554,
+            "x": 1793765092161,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763770683,
+            "time": 1793765097214,
             "value": 36.5
           },
-          "_msgid": "f99201e58931bc37",
+          "_msgid": "1cd7803bae19c1a7",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763770683,
+            "x": 1793765097214,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763775716,
+            "time": 1793765102305,
             "value": 36.5
           },
-          "_msgid": "07ae4dccd9d7ec2f",
+          "_msgid": "80153c8833483ddf",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763775716,
+            "x": 1793765102305,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763780728,
+            "time": 1793765107431,
             "value": 36.5
           },
-          "_msgid": "d2c21fb025e37876",
+          "_msgid": "e25e110995bb959f",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763780728,
+            "x": 1793765107431,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763785810,
+            "time": 1793765112514,
             "value": 36.5
           },
-          "_msgid": "d567f830de9a14cd",
+          "_msgid": "ce00ca1f0ba0cd19",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763785810,
+            "x": 1793765112514,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763790898,
+            "time": 1793765117616,
             "value": 36.5
           },
-          "_msgid": "5b7cb67ace9cdf5b",
+          "_msgid": "124457c668da17b8",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763790898,
+            "x": 1793765117616,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763796004,
+            "time": 1793765122669,
             "value": 36.5
           },
-          "_msgid": "5262f7726bee547f",
+          "_msgid": "5bf496b357c6b0f8",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763796004,
+            "x": 1793765122669,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763801110,
+            "time": 1793765127772,
             "value": 36.5
           },
-          "_msgid": "caa6f175cbad4805",
+          "_msgid": "108f642901c7313f",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763801110,
+            "x": 1793765127772,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763806300,
+            "time": 1793765132845,
             "value": 36.5
           },
-          "_msgid": "aa5e18ea60cbb2e6",
+          "_msgid": "646ae88692693f80",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763806300,
+            "x": 1793765132845,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763811356,
+            "time": 1793765137943,
             "value": 36.5
           },
-          "_msgid": "77838b2c69fda567",
+          "_msgid": "6400379768e0453c",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763811356,
+            "x": 1793765137943,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763816487,
+            "time": 1793765142977,
             "value": 36.5
           },
-          "_msgid": "64ad383580273a17",
+          "_msgid": "49b71bf38f97bad3",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763816487,
+            "x": 1793765142977,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763821660,
+            "time": 1793765148027,
             "value": 36.5
           },
-          "_msgid": "ade2a115c918e3af",
+          "_msgid": "6d83b76b0e64c99c",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763821660,
+            "x": 1793765148027,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763826735,
+            "time": 1793765153118,
             "value": 36.5
           },
-          "_msgid": "7f413a6959ee71cc",
+          "_msgid": "8aa03981ab7f95f7",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763826735,
+            "x": 1793765153118,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763831977,
+            "time": 1793765158163,
             "value": 36.5
           },
-          "_msgid": "f3d776e6cb13b727",
+          "_msgid": "f4a31a8c36692f45",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763831977,
+            "x": 1793765158163,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763837042,
+            "time": 1793765163288,
             "value": 36.5
           },
-          "_msgid": "2447f86ea3fbc238",
+          "_msgid": "17d0d4f09debbee6",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763837042,
+            "x": 1793765163288,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763842132,
+            "time": 1793765168595,
             "value": 36.5
           },
-          "_msgid": "dbb03b7717917433",
+          "_msgid": "e0cca3746be87861",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763842132,
+            "x": 1793765168595,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763847377,
-            "value": 36.5
+            "time": 1793765175036,
+            "value": 37
           },
-          "_msgid": "05c2ade7781bb414",
+          "_msgid": "1d41983e84bf90b4",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763847377,
+            "x": 1793765175036,
+            "y": 37
+          }
+        },
+        {
+          "topic": "Temperatura",
+          "payload": {
+            "time": 1793765173723,
+            "value": 36.5
+          },
+          "_msgid": "a2d699241fcd1b5a",
+          "_datapoint": {
+            "category": "Temperatura",
+            "x": 1793765173723,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763852245,
-            "value": 36.5
+            "time": 1793765175809,
+            "value": 38
           },
-          "_msgid": "7e0960a7d44636e2",
+          "_msgid": "33354ee3919efb03",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763852245,
+            "x": 1793765175809,
+            "y": 38
+          }
+        },
+        {
+          "topic": "Temperatura",
+          "payload": {
+            "time": 1793765176733,
+            "value": 38.1
+          },
+          "_msgid": "d58767b5699ed128",
+          "_datapoint": {
+            "category": "Temperatura",
+            "x": 1793765176733,
+            "y": 38.1
+          }
+        },
+        {
+          "topic": "Temperatura",
+          "payload": {
+            "time": 1793765177419,
+            "value": 37
+          },
+          "_msgid": "6945cb1e618bf438",
+          "_datapoint": {
+            "category": "Temperatura",
+            "x": 1793765177419,
+            "y": 37
+          }
+        },
+        {
+          "topic": "Temperatura",
+          "payload": {
+            "time": 1793765178655,
+            "value": 36.5
+          },
+          "_msgid": "128198ccc80193d9",
+          "_datapoint": {
+            "category": "Temperatura",
+            "x": 1793765178655,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763857377,
-            "value": 36.5
+            "time": 1793765178794,
+            "value": 37
           },
-          "_msgid": "2ad12f7bafb53982",
+          "_msgid": "d593a6416657c035",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763857377,
+            "x": 1793765178794,
+            "y": 37
+          }
+        },
+        {
+          "topic": "Temperatura",
+          "payload": {
+            "time": 1793765179620,
+            "value": 37
+          },
+          "_msgid": "1a3555a0e3c02484",
+          "_datapoint": {
+            "category": "Temperatura",
+            "x": 1793765179620,
+            "y": 37
+          }
+        },
+        {
+          "topic": "Temperatura",
+          "payload": {
+            "time": 1793765135307,
+            "value": 37
+          },
+          "_msgid": "37c6f0c230019925",
+          "_datapoint": {
+            "category": "Temperatura",
+            "x": 1793765135307,
+            "y": 37
+          }
+        },
+        {
+          "topic": "Temperatura",
+          "payload": {
+            "time": 1793765180994,
+            "value": 37
+          },
+          "_msgid": "bce2db45e2531371",
+          "_datapoint": {
+            "category": "Temperatura",
+            "x": 1793765180994,
+            "y": 37
+          }
+        },
+        {
+          "topic": "Temperatura",
+          "payload": {
+            "time": 1793765183823,
+            "value": 36.5
+          },
+          "_msgid": "2e106bff08612048",
+          "_datapoint": {
+            "category": "Temperatura",
+            "x": 1793765183823,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763862564,
+            "time": 1793765188902,
             "value": 36.5
           },
-          "_msgid": "de4fea6b6141abba",
+          "_msgid": "c2c0bf962f8bf012",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763862564,
+            "x": 1793765188902,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763867699,
-            "value": 36.5
+            "time": 1793765189726,
+            "value": 37
           },
-          "_msgid": "e862b264331b64fb",
+          "_msgid": "4e7a8dcd78454929",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763867699,
+            "x": 1793765189726,
+            "y": 37
+          }
+        },
+        {
+          "topic": "Temperatura",
+          "payload": {
+            "time": 1793765191474,
+            "value": 36.5
+          },
+          "_msgid": "c7b3faaf701ef160",
+          "_datapoint": {
+            "category": "Temperatura",
+            "x": 1793765191474,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763872800,
-            "value": 39
-          },
-          "_msgid": "0240ac1fbb236c53",
-          "_datapoint": {
-            "category": "Temperatura",
-            "x": 1793763872800,
-            "y": 39
-          }
-        },
-        {
-          "topic": "Temperatura",
-          "payload": {
-            "time": 1793763877902,
-            "value": 39
-          },
-          "_msgid": "d4b60a6cdca856bd",
-          "_datapoint": {
-            "category": "Temperatura",
-            "x": 1793763877902,
-            "y": 39
-          }
-        },
-        {
-          "topic": "Temperatura",
-          "payload": {
-            "time": 1793763883045,
-            "value": 39
-          },
-          "_msgid": "78bacbf79ec9fc2d",
-          "_datapoint": {
-            "category": "Temperatura",
-            "x": 1793763883045,
-            "y": 39
-          }
-        },
-        {
-          "topic": "Temperatura",
-          "payload": {
-            "time": 1793763888140,
-            "value": 39
-          },
-          "_msgid": "b5a65423cd830dda",
-          "_datapoint": {
-            "category": "Temperatura",
-            "x": 1793763888140,
-            "y": 39
-          }
-        },
-        {
-          "topic": "Temperatura",
-          "payload": {
-            "time": 1793763893344,
-            "value": 39
-          },
-          "_msgid": "f2084050cdd651f6",
-          "_datapoint": {
-            "category": "Temperatura",
-            "x": 1793763893344,
-            "y": 39
-          }
-        },
-        {
-          "topic": "Temperatura",
-          "payload": {
-            "time": 1793763898403,
-            "value": 39
-          },
-          "_msgid": "7e785be395e213c4",
-          "_datapoint": {
-            "category": "Temperatura",
-            "x": 1793763898403,
-            "y": 39
-          }
-        },
-        {
-          "topic": "Temperatura",
-          "payload": {
-            "time": 1793763903544,
-            "value": 39
-          },
-          "_msgid": "6585efbc06c84e1f",
-          "_datapoint": {
-            "category": "Temperatura",
-            "x": 1793763903544,
-            "y": 39
-          }
-        },
-        {
-          "topic": "Temperatura",
-          "payload": {
-            "time": 1793763908719,
-            "value": 39
-          },
-          "_msgid": "f53257b877196094",
-          "_datapoint": {
-            "category": "Temperatura",
-            "x": 1793763908719,
-            "y": 39
-          }
-        },
-        {
-          "topic": "Temperatura",
-          "payload": {
-            "time": 1793763913913,
-            "value": 39
-          },
-          "_msgid": "68d75bbaa3a075f5",
-          "_datapoint": {
-            "category": "Temperatura",
-            "x": 1793763913913,
-            "y": 39
-          }
-        },
-        {
-          "topic": "Temperatura",
-          "payload": {
-            "time": 1793763918974,
-            "value": 39
-          },
-          "_msgid": "f9137f78f28a2a1c",
-          "_datapoint": {
-            "category": "Temperatura",
-            "x": 1793763918974,
-            "y": 39
-          }
-        },
-        {
-          "topic": "Temperatura",
-          "payload": {
-            "time": 1793763948354,
-            "value": 36.5
-          },
-          "_msgid": "850605c6dcbaf6b3",
-          "_datapoint": {
-            "category": "Temperatura",
-            "x": 1793763948354,
-            "y": 36.5
-          }
-        },
-        {
-          "topic": "Temperatura",
-          "payload": {
-            "time": 1793763949036,
+            "time": 1793765192160,
             "value": 39.2
           },
-          "_msgid": "90170b98a4cf033c",
+          "_msgid": "87f916a16bd969bb",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763949036,
+            "x": 1793765192160,
             "y": 39.2
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763920400,
+            "time": 1793765163529,
             "value": 36.5
           },
-          "_msgid": "4f81b209aa465979",
+          "_msgid": "e8319fc136775393",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763920400,
+            "x": 1793765163529,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763926082,
+            "time": 1793765194017,
             "value": 36.5
           },
-          "_msgid": "167847978ddd5c74",
+          "_msgid": "5c6e1d60b358fab9",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763926082,
+            "x": 1793765194017,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763931765,
+            "time": 1793765169214,
             "value": 36.5
           },
-          "_msgid": "eb05e55036fd1eb5",
+          "_msgid": "3286ef7cea1c5e3a",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763931765,
+            "x": 1793765169214,
             "y": 36.5
           }
         },
         {
           "topic": "Temperatura",
           "payload": {
-            "time": 1793763952447,
+            "time": 1793765174984,
+            "value": 36.5
+          },
+          "_msgid": "4b6a2d4613b0b1d7",
+          "_datapoint": {
+            "category": "Temperatura",
+            "x": 1793765174984,
+            "y": 36.5
+          }
+        },
+        {
+          "topic": "Temperatura",
+          "payload": {
+            "time": 1793765195669,
             "value": 37.1
           },
-          "_msgid": "a3615b3beb1c9a80",
+          "_msgid": "dd6cb5e74bd7ede1",
           "_datapoint": {
             "category": "Temperatura",
-            "x": 1793763952447,
+            "x": 1793765195669,
             "y": 37.1
           }
         }
@@ -541,494 +528,481 @@
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763760381,
+            "time": 1793765086835,
             "value": 0
           },
-          "_msgid": "6d9dee9c1d3d66f2",
+          "_msgid": "71f648d4f00369ac",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763760381,
+            "x": 1793765086835,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763765554,
+            "time": 1793765092161,
             "value": 0
           },
-          "_msgid": "7ebe98619d509ec7",
+          "_msgid": "c22cfecd67fb0e6d",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763765554,
+            "x": 1793765092161,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763770683,
+            "time": 1793765097214,
             "value": 0
           },
-          "_msgid": "f99201e58931bc37",
+          "_msgid": "1cd7803bae19c1a7",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763770683,
+            "x": 1793765097214,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763775716,
+            "time": 1793765102305,
             "value": 0
           },
-          "_msgid": "07ae4dccd9d7ec2f",
+          "_msgid": "80153c8833483ddf",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763775716,
+            "x": 1793765102305,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763780728,
+            "time": 1793765107431,
             "value": 0
           },
-          "_msgid": "d2c21fb025e37876",
+          "_msgid": "e25e110995bb959f",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763780728,
+            "x": 1793765107431,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763785810,
+            "time": 1793765112514,
             "value": 0
           },
-          "_msgid": "d567f830de9a14cd",
+          "_msgid": "ce00ca1f0ba0cd19",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763785810,
+            "x": 1793765112514,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763790898,
+            "time": 1793765117616,
             "value": 0
           },
-          "_msgid": "5b7cb67ace9cdf5b",
+          "_msgid": "124457c668da17b8",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763790898,
+            "x": 1793765117616,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763796004,
+            "time": 1793765122669,
             "value": 0
           },
-          "_msgid": "5262f7726bee547f",
+          "_msgid": "5bf496b357c6b0f8",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763796004,
+            "x": 1793765122669,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763801110,
+            "time": 1793765127772,
             "value": 0
           },
-          "_msgid": "caa6f175cbad4805",
+          "_msgid": "108f642901c7313f",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763801110,
+            "x": 1793765127772,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763806300,
+            "time": 1793765132845,
             "value": 0
           },
-          "_msgid": "aa5e18ea60cbb2e6",
+          "_msgid": "646ae88692693f80",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763806300,
+            "x": 1793765132845,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763811356,
+            "time": 1793765137943,
             "value": 0
           },
-          "_msgid": "77838b2c69fda567",
+          "_msgid": "6400379768e0453c",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763811356,
+            "x": 1793765137943,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763816487,
+            "time": 1793765142977,
             "value": 0
           },
-          "_msgid": "64ad383580273a17",
+          "_msgid": "49b71bf38f97bad3",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763816487,
+            "x": 1793765142977,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763821660,
+            "time": 1793765148027,
             "value": 0
           },
-          "_msgid": "ade2a115c918e3af",
+          "_msgid": "6d83b76b0e64c99c",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763821660,
+            "x": 1793765148027,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763826735,
+            "time": 1793765153118,
             "value": 0
           },
-          "_msgid": "7f413a6959ee71cc",
+          "_msgid": "8aa03981ab7f95f7",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763826735,
+            "x": 1793765153118,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763831977,
+            "time": 1793765158163,
             "value": 0
           },
-          "_msgid": "f3d776e6cb13b727",
+          "_msgid": "f4a31a8c36692f45",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763831977,
+            "x": 1793765158163,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763837042,
+            "time": 1793765163288,
             "value": 0
           },
-          "_msgid": "2447f86ea3fbc238",
+          "_msgid": "17d0d4f09debbee6",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763837042,
+            "x": 1793765163288,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763842132,
+            "time": 1793765168595,
             "value": 0
           },
-          "_msgid": "dbb03b7717917433",
+          "_msgid": "e0cca3746be87861",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763842132,
+            "x": 1793765168595,
             "y": 0
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763847377,
-            "value": 0
-          },
-          "_msgid": "05c2ade7781bb414",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763847377,
-            "y": 0
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763852245,
-            "value": 0
-          },
-          "_msgid": "7e0960a7d44636e2",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763852245,
-            "y": 0
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763857377,
-            "value": 0
-          },
-          "_msgid": "2ad12f7bafb53982",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763857377,
-            "y": 0
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763862564,
-            "value": 0
-          },
-          "_msgid": "de4fea6b6141abba",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763862564,
-            "y": 0
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763867699,
-            "value": 0
-          },
-          "_msgid": "e862b264331b64fb",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763867699,
-            "y": 0
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763872800,
-            "value": 0
-          },
-          "_msgid": "0240ac1fbb236c53",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763872800,
-            "y": 0
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763877902,
-            "value": 0
-          },
-          "_msgid": "d4b60a6cdca856bd",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763877902,
-            "y": 0
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763883045,
-            "value": 0
-          },
-          "_msgid": "78bacbf79ec9fc2d",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763883045,
-            "y": 0
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763888140,
-            "value": 0
-          },
-          "_msgid": "b5a65423cd830dda",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763888140,
-            "y": 0
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763893344,
-            "value": 0
-          },
-          "_msgid": "f2084050cdd651f6",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763893344,
-            "y": 0
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763898403,
-            "value": 0
-          },
-          "_msgid": "7e785be395e213c4",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763898403,
-            "y": 0
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763903544,
-            "value": 0
-          },
-          "_msgid": "6585efbc06c84e1f",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763903544,
-            "y": 0
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763908719,
-            "value": 0
-          },
-          "_msgid": "f53257b877196094",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763908719,
-            "y": 0
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763913913,
-            "value": 0
-          },
-          "_msgid": "68d75bbaa3a075f5",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763913913,
-            "y": 0
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763918974,
-            "value": 2
-          },
-          "_msgid": "f9137f78f28a2a1c",
-          "_datapoint": {
-            "category": "Pulsos manuais",
-            "x": 1793763918974,
-            "y": 2
-          }
-        },
-        {
-          "topic": "Pulsos manuais",
-          "payload": {
-            "time": 1793763948354,
+            "time": 1793765175036,
             "value": 72
           },
-          "_msgid": "850605c6dcbaf6b3",
+          "_msgid": "1d41983e84bf90b4",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763948354,
+            "x": 1793765175036,
             "y": 72
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763949036,
-            "value": 130
+            "time": 1793765173723,
+            "value": 0
           },
-          "_msgid": "90170b98a4cf033c",
+          "_msgid": "a2d699241fcd1b5a",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763949036,
+            "x": 1793765173723,
+            "y": 0
+          }
+        },
+        {
+          "topic": "Pulsos manuais",
+          "payload": {
+            "time": 1793765175809,
+            "value": 120
+          },
+          "_msgid": "33354ee3919efb03",
+          "_datapoint": {
+            "category": "Pulsos manuais",
+            "x": 1793765175809,
+            "y": 120
+          }
+        },
+        {
+          "topic": "Pulsos manuais",
+          "payload": {
+            "time": 1793765176733,
+            "value": 121
+          },
+          "_msgid": "d58767b5699ed128",
+          "_datapoint": {
+            "category": "Pulsos manuais",
+            "x": 1793765176733,
+            "y": 121
+          }
+        },
+        {
+          "topic": "Pulsos manuais",
+          "payload": {
+            "time": 1793765177419,
+            "value": 72
+          },
+          "_msgid": "6945cb1e618bf438",
+          "_datapoint": {
+            "category": "Pulsos manuais",
+            "x": 1793765177419,
+            "y": 72
+          }
+        },
+        {
+          "topic": "Pulsos manuais",
+          "payload": {
+            "time": 1793765178655,
+            "value": 0
+          },
+          "_msgid": "128198ccc80193d9",
+          "_datapoint": {
+            "category": "Pulsos manuais",
+            "x": 1793765178655,
+            "y": 0
+          }
+        },
+        {
+          "topic": "Pulsos manuais",
+          "payload": {
+            "time": 1793765178794,
+            "value": 72
+          },
+          "_msgid": "d593a6416657c035",
+          "_datapoint": {
+            "category": "Pulsos manuais",
+            "x": 1793765178794,
+            "y": 72
+          }
+        },
+        {
+          "topic": "Pulsos manuais",
+          "payload": {
+            "time": 1793765179620,
+            "value": 72
+          },
+          "_msgid": "1a3555a0e3c02484",
+          "_datapoint": {
+            "category": "Pulsos manuais",
+            "x": 1793765179620,
+            "y": 72
+          }
+        },
+        {
+          "topic": "Pulsos manuais",
+          "payload": {
+            "time": 1793765135307,
+            "value": 72
+          },
+          "_msgid": "37c6f0c230019925",
+          "_datapoint": {
+            "category": "Pulsos manuais",
+            "x": 1793765135307,
+            "y": 72
+          }
+        },
+        {
+          "topic": "Pulsos manuais",
+          "payload": {
+            "time": 1793765180994,
+            "value": 72
+          },
+          "_msgid": "bce2db45e2531371",
+          "_datapoint": {
+            "category": "Pulsos manuais",
+            "x": 1793765180994,
+            "y": 72
+          }
+        },
+        {
+          "topic": "Pulsos manuais",
+          "payload": {
+            "time": 1793765183823,
+            "value": 0
+          },
+          "_msgid": "2e106bff08612048",
+          "_datapoint": {
+            "category": "Pulsos manuais",
+            "x": 1793765183823,
+            "y": 0
+          }
+        },
+        {
+          "topic": "Pulsos manuais",
+          "payload": {
+            "time": 1793765188902,
+            "value": 0
+          },
+          "_msgid": "c2c0bf962f8bf012",
+          "_datapoint": {
+            "category": "Pulsos manuais",
+            "x": 1793765188902,
+            "y": 0
+          }
+        },
+        {
+          "topic": "Pulsos manuais",
+          "payload": {
+            "time": 1793765189726,
+            "value": 72
+          },
+          "_msgid": "4e7a8dcd78454929",
+          "_datapoint": {
+            "category": "Pulsos manuais",
+            "x": 1793765189726,
+            "y": 72
+          }
+        },
+        {
+          "topic": "Pulsos manuais",
+          "payload": {
+            "time": 1793765191474,
+            "value": 72
+          },
+          "_msgid": "c7b3faaf701ef160",
+          "_datapoint": {
+            "category": "Pulsos manuais",
+            "x": 1793765191474,
+            "y": 72
+          }
+        },
+        {
+          "topic": "Pulsos manuais",
+          "payload": {
+            "time": 1793765192160,
+            "value": 130
+          },
+          "_msgid": "87f916a16bd969bb",
+          "_datapoint": {
+            "category": "Pulsos manuais",
+            "x": 1793765192160,
             "y": 130
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763920400,
+            "time": 1793765163529,
             "value": 72
           },
-          "_msgid": "4f81b209aa465979",
+          "_msgid": "e8319fc136775393",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763920400,
+            "x": 1793765163529,
             "y": 72
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763926082,
-            "value": 72
+            "time": 1793765194017,
+            "value": 0
           },
-          "_msgid": "167847978ddd5c74",
+          "_msgid": "5c6e1d60b358fab9",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763926082,
+            "x": 1793765194017,
+            "y": 0
+          }
+        },
+        {
+          "topic": "Pulsos manuais",
+          "payload": {
+            "time": 1793765169214,
+            "value": 72
+          },
+          "_msgid": "3286ef7cea1c5e3a",
+          "_datapoint": {
+            "category": "Pulsos manuais",
+            "x": 1793765169214,
             "y": 72
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763931765,
+            "time": 1793765174984,
             "value": 72
           },
-          "_msgid": "eb05e55036fd1eb5",
+          "_msgid": "4b6a2d4613b0b1d7",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763931765,
+            "x": 1793765174984,
             "y": 72
           }
         },
         {
           "topic": "Pulsos manuais",
           "payload": {
-            "time": 1793763952447,
+            "time": 1793765195669,
             "value": 72
           },
-          "_msgid": "a3615b3beb1c9a80",
+          "_msgid": "dd6cb5e74bd7ede1",
           "_datapoint": {
             "category": "Pulsos manuais",
-            "x": 1793763952447,
+            "x": 1793765195669,
             "y": 72
           }
         }
@@ -1038,14 +1012,14 @@
       "type": "ui-gauge",
       "data": {
         "payload": 37.1,
-        "_msgid": "a3615b3beb1c9a80"
+        "_msgid": "dd6cb5e74bd7ede1"
       }
     },
     "Umidade relativa": {
       "type": "ui-gauge",
       "data": {
         "payload": 58,
-        "_msgid": "a3615b3beb1c9a80"
+        "_msgid": "dd6cb5e74bd7ede1"
       }
     }
   }

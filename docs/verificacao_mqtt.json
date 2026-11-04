@@ -1,15 +1,15 @@
 {
-  "checked_at": "2026-11-04T03:45:52.680Z",
+  "checked_at": "2026-11-04T04:06:35.897Z",
   "origin": "cliente MQTT de teste no computador; nao simulacao de ESP32",
   "broker": "broker.hivemq.com:1883",
   "ack_count": 7,
-  "boot_id": "f1544d060c266799",
+  "boot_id": "365fc6449ea0f4d4",
   "results": [
     {
       "seq": 1,
       "ack": {
         "device_id": "cardioia-teste-01",
-        "boot_id": "f1544d060c266799",
+        "boot_id": "365fc6449ea0f4d4",
         "seq": 1
       },
       "temperature": 36.5,
@@ -19,7 +19,7 @@
       "seq": 2,
       "ack": {
         "device_id": "cardioia-teste-01",
-        "boot_id": "f1544d060c266799",
+        "boot_id": "365fc6449ea0f4d4",
         "seq": 2
       },
       "temperature": 39.2,
@@ -29,7 +29,7 @@
       "seq": 2,
       "ack": {
         "device_id": "cardioia-teste-01",
-        "boot_id": "f1544d060c266799",
+        "boot_id": "365fc6449ea0f4d4",
         "seq": 2
       },
       "temperature": 39.2,
@@ -39,7 +39,7 @@
       "seq": 3,
       "ack": {
         "device_id": "cardioia-teste-01",
-        "boot_id": "f1544d060c266799",
+        "boot_id": "365fc6449ea0f4d4",
         "seq": 3
       },
       "temperature": 36.5,
@@ -49,7 +49,7 @@
       "seq": 4,
       "ack": {
         "device_id": "cardioia-teste-01",
-        "boot_id": "f1544d060c266799",
+        "boot_id": "365fc6449ea0f4d4",
         "seq": 4
       },
       "temperature": 36.5,
@@ -59,7 +59,7 @@
       "seq": 5,
       "ack": {
         "device_id": "cardioia-teste-01",
-        "boot_id": "f1544d060c266799",
+        "boot_id": "365fc6449ea0f4d4",
         "seq": 5
       },
       "temperature": 36.5,
@@ -69,7 +69,7 @@
       "seq": 6,
       "ack": {
         "device_id": "cardioia-teste-01",
-        "boot_id": "f1544d060c266799",
+        "boot_id": "365fc6449ea0f4d4",
         "seq": 6
       },
       "temperature": 37.1,

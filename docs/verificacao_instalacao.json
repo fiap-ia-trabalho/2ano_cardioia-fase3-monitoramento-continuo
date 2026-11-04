@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-04",
+  "method": "copia isolada sem node_modules; npm ci; inicio Node-RED pelo export; teste MQTT real e leitura dos widgets",
+  "npm_ci_exit_code": 0,
+  "node_red": "5.0.9",
+  "dashboard": "1.34.1",
+  "unit_tests_passed": 11,
+  "protocol_cases_passed": 9,
+  "smoke_acks": 7,
+  "runtime_widgets_checked": 5,
+  "result": "APROVADO"
+}

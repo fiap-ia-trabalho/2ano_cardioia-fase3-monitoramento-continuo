@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-11-04T04:05:40.060Z",
+  "expected_boot": "bea9998f0127a984",
+  "expected_head": 30,
+  "packets": [
+    {
+      "device_id": "cardioia-demo-01",
+      "boot_id": "ffffffffffffffff",
+      "seq": 30
+    },
+    {
+      "device_id": "cardioia-outro",
+      "boot_id": "bea9998f0127a984",
+      "seq": 30
+    },
+    {
+      "device_id": "cardioia-demo-01",
+      "boot_id": "bea9998f0127a984",
+      "seq": 130
+    }
+  ],
+  "interpretation": "Os tres ACKs foram rejeitados: a sequencia 30 continuou em voo e so saiu apos confirmacao correta do consumidor.",
+  "rejection_observed": true
+}

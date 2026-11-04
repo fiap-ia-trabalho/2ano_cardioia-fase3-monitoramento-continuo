@@ -15,6 +15,7 @@
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
 #include <math.h>
+#include "core.hpp"
 
 const uint8_t DHT_PIN = 15, PULSE_PIN = 27, ONLINE_PIN = 25, ALERT_PIN = 19;
 const uint32_t SAMPLE_MS = 5000, ACK_TIMEOUT_MS = 3000, RETRY_MS = 5000;
@@ -25,21 +26,13 @@ const char *DEVICE = "cardioia-demo-01";
 const char *DATA_TOPIC = "fiap/cardioia/2026/m567659-iot-6a19/telemetria";
 const char *ACK_TOPIC = "fiap/cardioia/2026/m567659-iot-6a19/ack";
 
-struct Sample {
-  uint32_t seq, uptimeMs, idleMs;
-  float temperature, humidity, ax, ay, az;
-  uint16_t bpm;
-  uint8_t valid; // bit 0: DHT; bit 1: MPU; bit 2: janela de pulsos completa
-};
-Sample samples[CAPACITY];
-uint16_t head = 0, count = 0;
+FixedQueue<Sample, CAPACITY> queue;
 uint32_t nextSeq = 1, dropped = 0;
-uint32_t pulseTimes[300];
-uint16_t pulseHead = 0, pulseCount = 0;
-uint32_t lastPulse = 0, lastSample = 0, lastMotion = 0, lastMotionPoll = 0;
+PulseCounter pulses;
+uint32_t lastSample = 0, lastMotion = 0, lastMotionPoll = 0;
 uint32_t lastRetry = 0, sentAt = 0, lastSend = 0, lastWifiTry = 0;
 bool waitingAck = false, serialOnly = false, connectedSim = true;
-bool mpuOk = false, motionBaseline = false;
+bool mpuOk = false, motionBaseline = false, motionValid = false;
 float ax = 0, ay = 0, az = 0, oldAx = 0, oldAy = 0, oldAz = 0;
 char bootId[17];
 DHTesp dht;
@@ -55,31 +48,18 @@ PubSubClient mqtt(network);
 
 // Intervalos por subtracao de uint32_t continuam funcionando no rollover de millis().
 void pollPulse(uint32_t now) {
-  static bool oldPressed = false;
-  bool pressed = digitalRead(PULSE_PIN) == LOW;
-  if (pressed && !oldPressed && (lastPulse == 0 || uint32_t(now - lastPulse) >= 180)) {
-    if (pulseCount < 300) {
-      pulseTimes[(pulseHead + pulseCount) % 300] = now;
-      ++pulseCount;
-    }
-    lastPulse = now;
-  }
-  oldPressed = pressed;
-  while (pulseCount && uint32_t(now - pulseTimes[pulseHead]) >= 60000) {
-    pulseHead = (pulseHead + 1) % 300;
-    --pulseCount;
-  }
+  pulses.poll(now, digitalRead(PULSE_PIN) == LOW);
 }
 
 void pollMotion(uint32_t now) {
   if (!mpuOk || uint32_t(now - lastMotionPoll) < 200) return;
   lastMotionPoll = now;
   sensors_event_t a, g, t;
-  mpu.getEvent(&a, &g, &t);
+  motionValid = mpu.getEvent(&a, &g, &t) && validMotion(a.acceleration.x,a.acceleration.y,a.acceleration.z);
+  if (!motionValid) { motionBaseline=false; return; }
   ax = a.acceleration.x; ay = a.acceleration.y; az = a.acceleration.z;
   // Mudanca do vetor evita confundir a gravidade constante com movimento.
-  float delta = sqrtf(sq(ax - oldAx) + sq(ay - oldAy) + sq(az - oldAz));
-  if (!motionBaseline || delta > 0.8f) lastMotion = now;
+  if (!motionBaseline || changedMotion(ax,ay,az,oldAx,oldAy,oldAz)) lastMotion = now;
   oldAx = ax; oldAy = ay; oldAz = az; motionBaseline = true;
 }
 
@@ -90,23 +70,18 @@ void capture(uint32_t now) {
   Sample s = {};
   s.seq = nextSeq++; s.uptimeMs = now; s.idleMs = now - lastMotion;
   s.temperature = th.temperature; s.humidity = th.humidity;
-  s.ax = ax; s.ay = ay; s.az = az; s.bpm = pulseCount;
-  s.valid = (isfinite(th.temperature) && isfinite(th.humidity) ? 1 : 0)
-          | (mpuOk ? 2 : 0) | (now >= 60000 ? 4 : 0);
-  bool alert = ((s.valid & 1) && s.temperature > 38.0f)
-            || ((s.valid & 4) && s.bpm > 120)
-            || ((s.valid & 2) && s.idleMs >= 60000);
-  digitalWrite(ALERT_PIN, alert ? HIGH : LOW);
+  s.ax = ax; s.ay = ay; s.az = az; s.bpm = pulses.bpm();
+  s.valid = (validDht(th.temperature,th.humidity) ? 1 : 0)
+          | (motionValid ? 2 : 0) | (pulses.ready() ? 4 : 0);
+  digitalWrite(ALERT_PIN, localAlert(s) ? HIGH : LOW);
   // Politica drop-new: preserva a leitura em voo e o historico ja aceito.
-  if (count == CAPACITY) {
+  if (!queue.push(s)) {
     ++dropped;
     Serial.printf("[FILA CHEIA] seq=%lu descartada; perdas=%lu\n", s.seq, dropped);
     return;
   }
-  samples[(head + count) % CAPACITY] = s;
-  ++count;
   Serial.printf("[COLETA] seq=%lu t=%.1f umidade=%.1f fila=%u/%u online=%d\n",
-                s.seq, s.temperature, s.humidity, count, CAPACITY, connectedSim);
+                s.seq, s.temperature, s.humidity, unsigned(queue.size()), CAPACITY, connectedSim);
 }
 
 void toJson(const Sample &s, JsonDocument &doc, uint32_t now) {
@@ -121,19 +96,18 @@ void toJson(const Sample &s, JsonDocument &doc, uint32_t now) {
   } else { doc["accel_x"] = nullptr; doc["accel_y"] = nullptr; doc["accel_z"] = nullptr; doc["idle_ms"] = nullptr; }
   if (s.valid & 4) doc["bpm"] = s.bpm; else doc["bpm"] = nullptr;
   doc["pulse_window_ready"] = bool(s.valid & 4);
-  doc["queue_pending"] = count;
+  doc["queue_pending"] = queue.size();
   doc["dropped_total"] = dropped;
   doc["simulated"] = true;
 }
 
 void acknowledge(char *topic, byte *payload, unsigned int length) {
-  if (!waitingAck || !count || strcmp(topic, ACK_TOPIC)) return;
+  if (!waitingAck || !queue.size() || strcmp(topic, ACK_TOPIC)) return;
   JsonDocument doc;
   if (deserializeJson(doc, payload, length)) return;
-  if (strcmp(doc["device_id"] | "", DEVICE) || strcmp(doc["boot_id"] | "", bootId)) return;
-  if (!doc["seq"].is<uint32_t>() || doc["seq"].as<uint32_t>() != samples[head].seq) return;
-  Serial.printf("[SINCRONIZADO MQTT] seq=%lu confirmada pelo Node-RED; fila=%u\n", samples[head].seq, count - 1);
-  head = (head + 1) % CAPACITY; --count; waitingAck = false;
+  if (!doc["seq"].is<uint32_t>() || !matchesAck(waitingAck,queue.front().seq,doc["seq"].as<uint32_t>(),DEVICE,bootId,doc["device_id"] | "",doc["boot_id"] | "")) return;
+  Serial.printf("[SINCRONIZADO MQTT] seq=%lu confirmada pelo Node-RED; fila=%u\n", queue.front().seq, unsigned(queue.size()-1));
+  queue.pop(); waitingAck = false;
 }
 
 void serviceNetwork(uint32_t now) {
@@ -163,27 +137,27 @@ void serviceNetwork(uint32_t now) {
 }
 
 void synchronize(uint32_t now) {
-  if (!connectedSim || !count) return;
+  if (!connectedSim || !queue.size()) return;
   if (serialOnly) {
     if (uint32_t(now - lastSend) < 100) return;
     lastSend = now;
-    JsonDocument doc; toJson(samples[head], doc, now);
+    JsonDocument doc; toJson(queue.front(), doc, now);
     Serial.print("[SINCRONIZADO SERIAL - simulacao de nuvem] "); serializeJson(doc, Serial); Serial.println();
-    head = (head + 1) % CAPACITY; --count;
+    queue.pop();
     return;
   }
   if (!mqtt.connected()) return;
   if (waitingAck && uint32_t(now - sentAt) < ACK_TIMEOUT_MS) return;
   if (uint32_t(now - lastSend) < 100) return;
   lastSend = now;
-  JsonDocument doc; toJson(samples[head], doc, now);
+  JsonDocument doc; toJson(queue.front(), doc, now);
   char buffer[768];
   size_t size = serializeJson(doc, buffer, sizeof(buffer));
   if (size >= sizeof(buffer) - 1) return;
   if (mqtt.publish(DATA_TOPIC, buffer, false)) {
     waitingAck = true; sentAt = now;
     // publish() e QoS 0: so removemos apos ACK da aplicacao.
-    Serial.printf("[ENVIO MQTT] seq=%lu aguardando ACK; fila=%u\n", samples[head].seq, count);
+    Serial.printf("[ENVIO MQTT] seq=%lu aguardando ACK; fila=%u\n", queue.front().seq, unsigned(queue.size()));
   }
 }
 
@@ -200,7 +174,7 @@ void setup() {
   mqtt.setServer(BROKER, 1883); mqtt.setCallback(acknowledge);
   mqtt.setBufferSize(1024); mqtt.setSocketTimeout(1); mqtt.setKeepAlive(15);
   WiFi.mode(WIFI_STA); WiFi.begin("Wokwi-GUEST", "", 6);
-  Serial.printf("CardioIA | sessao=%s | capacidade=%u | RAM fila=%u bytes\n", bootId, CAPACITY, sizeof(samples));
+  Serial.printf("CardioIA | sessao=%s | capacidade=%u | RAM amostras=%u bytes\n", bootId, CAPACITY, unsigned(sizeof(Sample)*CAPACITY));
   Serial.println("Chave esquerda=offline; direita=online. Serial: s=Parte1; m=MQTT Parte2.");
 }
 

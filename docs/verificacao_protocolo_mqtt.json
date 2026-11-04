@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-11-04T04:06:30.045Z",
+  "origin": "cliente MQTT sintetico + Socket.IO do servidor",
+  "results": [
+    {
+      "id": "T13-broker",
+      "status": "APROVADO"
+    },
+    {
+      "id": "T15-limites",
+      "status": "APROVADO"
+    },
+    {
+      "id": "T17-falha",
+      "status": "APROVADO"
+    },
+    {
+      "id": "T06-inatividade",
+      "status": "APROVADO"
+    },
+    {
+      "id": "T09-perdas",
+      "status": "APROVADO"
+    },
+    {
+      "id": "T14-historico",
+      "status": "APROVADO"
+    },
+    {
+      "id": "T11-duplicata",
+      "status": "APROVADO"
+    },
+    {
+      "id": "T16-invalido",
+      "status": "APROVADO"
+    },
+    {
+      "id": "T19-sessao",
+      "status": "APROVADO"
+    }
+  ],
+  "acks": 11,
+  "summaries": 10
+}

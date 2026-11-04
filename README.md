@@ -1,6 +1,6 @@
 # CardioIA Conectada
 
-**FIAP | 2º ano de Inteligência Artificial | Cap 1 - IoT e Visualização de Dados para a Saúde Digital**
+**FIAP | 2º ano de Inteligência Artificial | Fase 3 | Cap 1 - IoT e Visualização de Dados para a Saúde Digital**
 
 Atividade principal: simulação de coleta no ESP32, resiliência offline, transmissão
 MQTT e visualização no Node-RED. Os desafios Ir Além 1 e 2 não fazem parte deste projeto.
@@ -8,6 +8,8 @@ MQTT e visualização no Node-RED. Os desafios Ir Além 1 e 2 não fazem parte d
 > Somente dados simulados. O DHT22 mede temperatura e umidade do ambiente; não mede
 > temperatura corporal. O botão representa pulsos manuais, sem sensor cardíaco real.
 > Os limites são regras didáticas, sem validação clínica.
+
+Repositório público: [2ano_cardioia-fase3-monitoramento-continuo](https://github.com/fiap-ia-trabalho/2ano_cardioia-fase3-monitoramento-continuo).
 
 ## Entregáveis
 
@@ -20,9 +22,7 @@ MQTT e visualização no Node-RED. Os desafios Ir Além 1 e 2 não fazem parte d
 | 2 | Export do dashboard Node-RED | [node-red/flows.json](node-red/flows.json) |
 | 2 | Relatório MQTT e dashboard, mínimo 2 páginas | [Relatório MQTT](output/pdf/Relatorio_Parte_2_MQTT_Dashboard.pdf) |
 
-Este enunciado pede **prints OU export do dashboard**: o export está incluído.
-Vídeo e repositório público são solicitados especificamente no Ir Além 2;
-não aparecem como entregáveis obrigatórios da atividade principal recebida.
+O export do dashboard e as capturas de execução estão incluídos na entrega.
 O texto original está em [docs/enunciado_recebido.txt](docs/enunciado_recebido.txt).
 
 ## Fluxo
@@ -46,7 +46,7 @@ horário de recebimento menos idade da amostra; não é um relógio clínico sin
 
 ## Executar o dashboard
 
-Requer **Node.js 22 ou superior**, validado no Node.js 24.18.0.
+Requer **Node.js 22.9 ou superior**, validado no Node.js 24.18.0.
 No Windows, abra `iniciar_dashboard.bat`. Na primeira execução ele instala as
 dependências fixadas no `package-lock.json`. Alternativa pelo terminal:
 
@@ -80,7 +80,7 @@ O projeto usa ESP32 DevKit v1 e dois sensores distintos:
 | Chave deslizante | Centro → GPIO25; esquerda → GND; direita → 3V3 | Booleano de conectividade: esquerda offline, direita online |
 | LED vermelho | GPIO19 → LED → resistor 220 Ω → GND | Alerta local, inclusive offline |
 
-No Wokwi, use os arquivos `sketch.ino`, `diagram.json` e `libraries.txt` da pasta
+No Wokwi, use os arquivos `sketch.ino`, `core.hpp`, `diagram.json` e `libraries.txt` da pasta
 `esp32/`. `main.cpp` é apenas o adaptador para compilação com PlatformIO e não precisa
 ser adicionado ao editor web. As bibliotecas e versões estão em `libraries.txt`.
 
@@ -171,7 +171,7 @@ Para regenerar circuito e export após alterar as fontes:
 | Nome | RM |
 |---|---|
 | CAUAN OTTO RODRIGUES SOUSA | 567940 |
-| FERNANDO A GURGEL | 567606 |
+| FERNANDO ARAUJO GURGEL | 567606 |
 | IRACI MONTEIRO SOUZA | 567544 |
 | MARIA LUISA RODRIGUES NASCIMENTO | 567659 |
 | RAFAELA TORRES MARTINS | 567735 |
@@ -186,11 +186,16 @@ Para regenerar circuito e export após alterar as fontes:
 - [FlowFuse Dashboard: gráficos](https://dashboard.flowfuse.com/nodes/widgets/ui-chart.html)
 - [PubSubClient: limites de QoS e tamanho](https://github.com/knolleary/pubsubclient)
 
-## Revisão final em 04/11/2026
+## Evidências de validação
 
 Código compilado para ESP32 e executado no Wokwi. Testes de coleta offline,
 recuperação com ACK e fila zerada, saída Serial, temperatura a 39 °C, movimento
 e dois pulsos manuais foram exercitados. O dashboard foi revisado visualmente.
 As evidências estão em [docs/verificacao_wokwi.json](docs/verificacao_wokwi.json),
 [dashboard com alerta](docs/dashboard_alerta.png) e nos registros Serial da pasta `docs/`.
-O esgotamento das 2.000 posições foi revisado no código; não foi aguardado no ensaio.
+A capacidade de 2.000 posições, a recusa de excedentes, a ordem FIFO e a reutilização do anel foram executadas no núcleo C++ compartilhado com o firmware; o teste não exige aguardar 2h46 de simulação.
+
+O [protocolo de testes](docs/PROTOCOLO_TESTES.md) relaciona os requisitos à validação.
+O [resultado consolidado](docs/RESULTADOS_TESTES.md) registra escopo, evidências e limitações.
+Para testar o núcleo do ESP32: `python scripts/testar_core.py`, com compilador C++
+configurado em `CXX` ou disponível como c++, g++ ou clang++.

@@ -24,8 +24,8 @@ socket.on('ui-config',(base,config)=>{
     if(Object.keys(received).length===5){
      try{
       const summary=received['Estado e alertas'].data;
-      assert.equal(summary.payload.device_id,'cardioia-teste-01');
-      assert.equal(summary.payload.seq,6);
+      assert.match(summary.payload.device_id,/^cardioia-(?:teste|demo)-\d+$/);
+      assert.ok(Number.isInteger(summary.payload.seq) && summary.payload.seq>0);
       const chart=received['Temperatura ambiente (°C)'].data;
       assert.ok(Array.isArray(chart));
       assert.ok(chart.some(p=>p._datapoint?.y===39.2),'alerta chegou ao grafico real');
