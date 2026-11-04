@@ -166,6 +166,66 @@ e compilação não substituem executar o circuito e revisar visualmente o dashb
 Para regenerar circuito e export após alterar as fontes:
 `python scripts/preparar_projeto.py` (Python 3, sem dependências externas).
 
+## Comunicação automatizada com REST e e-mail
+
+Esta atividade complementar estende o monitoramento de sinais vitais com uma camada em Python que consome e publica dados por API REST e dispara alertas automatizados por e-mail quando são detectados riscos.
+
+### Objetivo
+
+Simular um sistema de monitoramento em que dados de temperatura, frequência cardíaca, inatividade e status do sensor sejam enviados para uma API REST, validados por regras de risco e encaminhados para uma automação de e-mail em caso de alerta.
+
+### Estrutura sugerida
+
+```text
+Sinais vitais simulados
+        ↓
+Cliente REST em Python
+        ↓
+POST /samples
+        ↓
+API local ou endpoint REST
+        ↓
+Validação e detecção de risco
+        ↙         ↘
+     OK          ALERTA
+                 ↓
+      Geração de e-mail
+                 ↓
+   Envio automático de alerta
+```
+
+### Regras de risco implementadas
+
+- Temperatura > 38 °C: risco de febre.
+- BPM > 120: taquicardia.
+- Inatividade ≥ 60 s: ausência de movimento ou baixo estímulo.
+- Sensor inválido ou ausente: falha de leitura.
+- Qualquer combinação desses critérios coloca o status em `alert`.
+
+### Instruções de execução
+
+```bash
+cd atividade_rest_email
+python3 -m pip install -r requirements.txt
+python3 mock_api.py
+python3 app.py --patient Maria --temperature 39.2 --bpm 128 --idle-ms 65000
+```
+
+### Descrição do fluxo
+
+1. O cliente Python gera ou recebe um payload com `temperature_c`, `bpm`, `idle_ms` e `sensor_ok`.
+2. O código envia esses dados para a API REST via `POST /samples`.
+3. A API retorna uma confirmação de recebimento.
+4. A lógica de risco classifica a amostra como `ok` ou `alert`.
+5. Quando há risco, o sistema monta um e-mail de alerta e dispara a automação.
+6. Em ambiente didático, a entrega usa simulação de e-mail por padrão para evitar credenciais reais.
+
+### Observações
+
+- O fluxo é didático e simulado, sem uso clínico ou diagnóstico real.
+- O envio de e-mail pode ser habilitado em modo real com SMTP e credenciais configuradas em variáveis de ambiente.
+- O código está organizado em módulos: cliente REST, regras de risco, envio de e-mail e documentação.
+
 ## Integrantes
 
 | Nome | RM |
