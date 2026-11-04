@@ -6,7 +6,7 @@ DEST=Path.home()/'Downloads/CardioIA_Conectada_Atividade_Principal.zip'
 SKIP={'.git','.pio','.local','node_modules','tmp','__pycache__'}
 files=[p for p in ROOT.rglob('*') if p.is_file() and not any(s in SKIP for s in p.relative_to(ROOT).parts) and not p.name.startswith('.config') and not p.name.endswith(('_cred.json','.log'))]
 names={p.relative_to(ROOT).as_posix() for p in files}
-required=['esp32/sketch.ino','esp32/diagram.json','esp32/libraries.txt','node-red/flows.json','node-red/package-lock.json','README.md','docs/link_wokwi.txt','output/pdf/Relatorio_Parte_1_Edge.pdf','output/pdf/Relatorio_Parte_2_MQTT_Dashboard.pdf','ENTREGA_CARDIOIA_CONECTADA.txt','docs/verificacao_wokwi.json']
+required=['esp32/sketch.ino','esp32/core.hpp','esp32/diagram.json','esp32/libraries.txt','node-red/flows.json','node-red/package-lock.json','README.md','docs/link_wokwi.txt','output/pdf/Relatorio_Parte_1_Edge.pdf','output/pdf/Relatorio_Parte_2_MQTT_Dashboard.pdf','ENTREGA_CARDIOIA_CONECTADA.txt','docs/verificacao_wokwi.json','docs/PROTOCOLO_TESTES.md','docs/RESULTADOS_TESTES.md']
 assert all(p in names for p in required)
 for p in files:
  if p.suffix=='.md':
