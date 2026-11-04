@@ -1,6 +1,33 @@
+# FIAP - Faculdade de Informática e Administração Paulista
+
+<img width="2385" height="642" alt="image" src="https://github.com/user-attachments/assets/594c28cc-66ae-40ac-b8a6-8c39e6f14de4" />
+
 # CardioIA Conectada
 
-**FIAP | 2º ano de Inteligência Artificial | Fase 3 | Cap 1 - IoT e Visualização de Dados para a Saúde Digital**
+**2º ano de Inteligência Artificial | Fase 3 | Cap 1 - IoT e Visualização de Dados para a Saúde Digital**
+
+## 👨‍🎓 Integrantes:
+- <a href="https://www.linkedin.com/in/cauanotto">Cauan Otto Rodrigues Sousa (RM567940)</a>
+- <a href="https://www.linkedin.com/in/fernando-gurgel-75aa8369">Fernando A Gurgel (RM567606)</a>
+- <a href="https://www.linkedin.com/in/iraci-souza-bab42034">Iraci Monteiro Souza (RM567544)</a> 
+- <a href="https://www.linkedin.com/in/malu-rodrigues-bb756b271">Maria Luisa Rodrigues Nascimento (RM567659)</a> 
+- <a href="https://www.linkedin.com/in/rafaela-torres222">Rafaela Torres Martins (RM567735)</a>
+
+## 👩‍🏫 Professores:
+### Tutor(a) 
+- Leonardo Ruiz Orabon
+### Coordenador(a)
+- <a href="https://www.linkedin.com/in/andregodoichiovato/">Andre Godoi</a>
+
+## 📜 Descrição
+
+A integração de soluções de Internet das Coisas (IoT) em cenários de saúde digital exige alta confiabilidade, resiliência contra instabilidades de conectividade e monitoramento ágil em tempo real. O projeto **CardioIA Conectada** simula um sistema de monitoramento contínuo de sinais vitais voltado para a cardiologia, cobrindo o ciclo ponta a ponta da telemetria médica: da captura e processamento na borda (*Edge Computing*) até a transmissão em nuvem (*Cloud/Fog Computing*) e a visualização interativa em dashboards com emissão de alertas automáticos.
+
+A solução foi desenhada para mitigar falhas de comunicação em ambientes hospitalares ou de *home care*. O dispositivo simulado (ESP32) conta com um mecanismo de resiliência offline baseado em uma fila FIFO em memória RAM com política de proteção de dados, garantindo que as leituras continuem sendo registradas mesmo durante quedas de rede e sejam sincronizadas sequencialmente via protocolo MQTT assim que a conexão com o broker for restabelecida. Na camada receptora, um fluxo implementado no Node-RED valida, deduplica e renderiza os dados em gráficos e medidores, emitindo confirmações de entrega (ACKs de aplicação) para esvaziamento seguro da fila no microcontrolador.
+
+---
+
+## 🎯 Escopo do Projeto
 
 Atividade principal: simulação de coleta no ESP32, resiliência offline, transmissão
 MQTT e visualização no Node-RED. Os desafios Ir Além 1 e 2 não fazem parte deste projeto.
@@ -166,16 +193,6 @@ e compilação não substituem executar o circuito e revisar visualmente o dashb
 Para regenerar circuito e export após alterar as fontes:
 `python scripts/preparar_projeto.py` (Python 3, sem dependências externas).
 
-## Integrantes
-
-| Nome | RM |
-|---|---|
-| CAUAN OTTO RODRIGUES SOUSA | 567940 |
-| FERNANDO ARAUJO GURGEL | 567606 |
-| IRACI MONTEIRO SOUZA | 567544 |
-| MARIA LUISA RODRIGUES NASCIMENTO | 567659 |
-| RAFAELA TORRES MARTINS | 567735 |
-
 ## Referências
 
 - [Wokwi: rede Wi-Fi do ESP32](https://docs.wokwi.com/guides/esp32-wifi)
@@ -199,3 +216,7 @@ O [protocolo de testes](docs/PROTOCOLO_TESTES.md) relaciona os requisitos à val
 O [resultado consolidado](docs/RESULTADOS_TESTES.md) registra escopo, evidências e limitações.
 Para testar o núcleo do ESP32: `python scripts/testar_core.py`, com compilador C++
 configurado em `CXX` ou disponível como c++, g++ ou clang++.
+
+## 📋 Licença e Atribuição
+
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/SabrinaOtoni/TEMPLATE-FIAP-GRAD-ON-IA">MODELO GIT FIAP</a> por <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://fiap.com.br">FIAP</a> está licenciado sobre <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
