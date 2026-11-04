@@ -5,8 +5,8 @@ LINK DA SIMULACAO
 https://wokwi.com/projects/479728974687586305
 
 PARTE 1
-- Codigo C++ comentado: esp32/sketch.ino
-- Circuito e bibliotecas: esp32/core.hpp, esp32/diagram.json e esp32/libraries.txt
+- Codigo C++ comentado: esp32/sketch.ino e esp32/core.hpp
+- Circuito e bibliotecas: esp32/diagram.json e esp32/libraries.txt
 - Relatorio: output/pdf/Relatorio_Parte_1_Edge.pdf (2 paginas)
 
 PARTE 2

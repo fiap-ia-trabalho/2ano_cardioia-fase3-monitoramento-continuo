@@ -16,7 +16,7 @@ Repositório público: [2ano_cardioia-fase3-monitoramento-continuo](https://gith
 | Parte | Entregável | Local |
 |---|---|---|
 | 1 | Link da simulação Wokwi | [Abrir simulação](https://wokwi.com/projects/479728974687586305) |
-| 1 e 2 | Código C++ comentado do ESP32 | [esp32/sketch.ino](esp32/sketch.ino) |
+| 1 e 2 | Código C++ comentado do ESP32 | [sketch.ino](esp32/sketch.ino) e [core.hpp](esp32/core.hpp) |
 | 1 | Circuito com DHT22 e MPU6050 | [esp32/diagram.json](esp32/diagram.json) |
 | 1 | Relatório do fluxo e da resiliência, mínimo 1 página | [Relatório Edge](output/pdf/Relatorio_Parte_1_Edge.pdf) |
 | 2 | Export do dashboard Node-RED | [node-red/flows.json](node-red/flows.json) |
