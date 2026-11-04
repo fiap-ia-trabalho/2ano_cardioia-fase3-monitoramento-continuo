@@ -11,6 +11,42 @@ MQTT e visualização no Node-RED. Os desafios Ir Além 1 e 2 não fazem parte d
 
 Repositório público: [2ano_cardioia-fase3-monitoramento-continuo](https://github.com/fiap-ia-trabalho/2ano_cardioia-fase3-monitoramento-continuo).
 
+## Instruções dos módulos Ir Além
+
+Este repositório inclui extensões complementares dos desafios Ir Além 1 e 2.
+
+### Ir Além 1 - REST + automação
+
+Local: `python_ir_alem_1/`
+
+```bash
+cd python_ir_alem_1
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python3 mock_api.py
+python3 app.py --patient Maria --temperature 39.2 --bpm 128 --idle-ms 65000
+```
+
+### Ir Além 2 - IA em séries temporais
+
+Local: `python_ir_alem_2/`
+
+```bash
+cd python_ir_alem_2
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python src/health_series_ai.py
+```
+
+Para abrir o notebook do Ir Além 2:
+
+```bash
+cd python_ir_alem_2
+jupyter notebook notebooks/analise_series_saude.ipynb
+```
+
 ## Entregáveis
 
 | Parte | Entregável | Local |

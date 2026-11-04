@@ -8,3 +8,5 @@ node-red/.sessions.json
 tmp/
 __pycache__/
 *.log
+
+.idea
