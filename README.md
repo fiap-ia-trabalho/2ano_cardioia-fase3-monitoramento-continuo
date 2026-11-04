@@ -16,7 +16,7 @@ Repositório público: [2ano_cardioia-fase3-monitoramento-continuo](https://gith
 | Parte | Entregável | Local |
 |---|---|---|
 | 1 | Link da simulação Wokwi | [Abrir simulação](https://wokwi.com/projects/479728974687586305) |
-| 1 e 2 | Código C++ comentado do ESP32 | [esp32/sketch.ino](esp32/sketch.ino) |
+| 1 e 2 | Código C++ comentado do ESP32 | [sketch.ino](esp32/sketch.ino) e [core.hpp](esp32/core.hpp) |
 | 1 | Circuito com DHT22 e MPU6050 | [esp32/diagram.json](esp32/diagram.json) |
 | 1 | Relatório do fluxo e da resiliência, mínimo 1 página | [Relatório Edge](output/pdf/Relatorio_Parte_1_Edge.pdf) |
 | 2 | Export do dashboard Node-RED | [node-red/flows.json](node-red/flows.json) |
@@ -166,66 +166,6 @@ e compilação não substituem executar o circuito e revisar visualmente o dashb
 Para regenerar circuito e export após alterar as fontes:
 `python scripts/preparar_projeto.py` (Python 3, sem dependências externas).
 
-## Comunicação automatizada com REST e e-mail
-
-Esta atividade complementar estende o monitoramento de sinais vitais com uma camada em Python que consome e publica dados por API REST e dispara alertas automatizados por e-mail quando são detectados riscos.
-
-### Objetivo
-
-Simular um sistema de monitoramento em que dados de temperatura, frequência cardíaca, inatividade e status do sensor sejam enviados para uma API REST, validados por regras de risco e encaminhados para uma automação de e-mail em caso de alerta.
-
-### Estrutura sugerida
-
-```text
-Sinais vitais simulados
-        ↓
-Cliente REST em Python
-        ↓
-POST /samples
-        ↓
-API local ou endpoint REST
-        ↓
-Validação e detecção de risco
-        ↙         ↘
-     OK          ALERTA
-                 ↓
-      Geração de e-mail
-                 ↓
-   Envio automático de alerta
-```
-
-### Regras de risco implementadas
-
-- Temperatura > 38 °C: risco de febre.
-- BPM > 120: taquicardia.
-- Inatividade ≥ 60 s: ausência de movimento ou baixo estímulo.
-- Sensor inválido ou ausente: falha de leitura.
-- Qualquer combinação desses critérios coloca o status em `alert`.
-
-### Instruções de execução
-
-```bash
-cd atividade_rest_email
-python3 -m pip install -r requirements.txt
-python3 mock_api.py
-python3 app.py --patient Maria --temperature 39.2 --bpm 128 --idle-ms 65000
-```
-
-### Descrição do fluxo
-
-1. O cliente Python gera ou recebe um payload com `temperature_c`, `bpm`, `idle_ms` e `sensor_ok`.
-2. O código envia esses dados para a API REST via `POST /samples`.
-3. A API retorna uma confirmação de recebimento.
-4. A lógica de risco classifica a amostra como `ok` ou `alert`.
-5. Quando há risco, o sistema monta um e-mail de alerta e dispara a automação.
-6. Em ambiente didático, a entrega usa simulação de e-mail por padrão para evitar credenciais reais.
-
-### Observações
-
-- O fluxo é didático e simulado, sem uso clínico ou diagnóstico real.
-- O envio de e-mail pode ser habilitado em modo real com SMTP e credenciais configuradas em variáveis de ambiente.
-- O código está organizado em módulos: cliente REST, regras de risco, envio de e-mail e documentação.
-
 ## Integrantes
 
 | Nome | RM |
@@ -259,3 +199,7 @@ O [protocolo de testes](docs/PROTOCOLO_TESTES.md) relaciona os requisitos à val
 O [resultado consolidado](docs/RESULTADOS_TESTES.md) registra escopo, evidências e limitações.
 Para testar o núcleo do ESP32: `python scripts/testar_core.py`, com compilador C++
 configurado em `CXX` ou disponível como c++, g++ ou clang++.
+
+## 📋 Licença e Atribuição
+
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/SabrinaOtoni/TEMPLATE-FIAP-GRAD-ON-IA">MODELO GIT FIAP</a> por <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://fiap.com.br">FIAP</a> está licenciado sobre <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
